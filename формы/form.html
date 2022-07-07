@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="form_style.css">
+  <title>Формы</title>
+</head>
+<body>
+  <h1>Запись на курсы программирования</h1>
+  <form>
+    <div class="block">
+      <label for="name">Имя:</label><br>
+      <input type="text" id="name" placeholder="Андрей"><br>
+    </div>
+
+    <div class="block">
+      <input type="radio" name="lang" value="Java" id="Java" checked><label for="Java">Java</label>
+      <input type="radio" name="lang" value="C++" id="C++"><label for="C++">C++</label>
+      <input type="radio" name="lang" value="Python" id="Python"><label for="Python">Python</label>
+      <input type="radio" name="lang" value="PHP" id="PHP"><label for="PHP">PHP</label>
+      <input type="radio" name="lang" value="JavaScript" id="JavaScript"><label for="JavaScript">JavaScript</label><br>
+    </div>
+
+    <div class="block">
+      <label for="area">Дополнительная информация:</label><br>
+      <textarea name="" id="area" cols="25" rows="3" placeholder="Есть опыт программирования на Java"></textarea><br>
+    </div>
+
+    <div class="block">
+      <label for="secret_word">Секретное слово:</label><br>
+      <input type="password" id="secret_word"><br>
+    </div>
+
+    <div class="block">
+      <input type="checkbox" id="agree" required><label for="agree">С правилами ознакомился и согласен</label><br>
+    </div>
+
+    <div class="block">
+      <input type="submit" value="Отправить">
+      <input type="reset" value="Очистить">
+    </div>
+
+  </form>
+</body>
+</html>
