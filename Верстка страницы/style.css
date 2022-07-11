@@ -1,0 +1,229 @@
+@font-face {
+  font-family: "Circe";
+  src:url("fonts/circe_300.woff2"),
+  url("fonts/circe_300.woff"),
+  url("fonts/circe_300.ttf");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Circe";
+  src:url("fonts/circe_600.woff2"),
+  url("fonts/circe_600.woff"),
+  url("fonts/circe_600.ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Circe";
+  src:url("fonts/circe_700.woff2"),
+  url("fonts/circe_700.woff"),
+  url("fonts/circe_700.ttf");
+  font-weight: 700
+}
+
+* {
+  font-family: "Circe";
+  font-weight: 300;
+  font-size: 13px;
+}
+
+ a {
+   text-decoration: none;
+   color: #006be5;
+ }
+
+.container {
+  margin: 100px auto;
+  width: 1410px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.list_photo {
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 100px;
+}
+
+.list_photo_image1, .list_photo_image2, .list_photo_image3 {
+  padding: 15px 0;
+  max-width: 100px;
+}
+
+.list_photo_image1:hover {
+   transform: translate(350px, 200px) scale(3.5);
+}
+
+.list_photo_image2:hover {
+   transform: translate(350px, 0) scale(3.5);
+}
+
+.list_photo_image3:hover {
+   transform: translate(350px, -200px) scale(3.5);
+}
+
+.object {
+    transition: all 1s ease-in-out;
+}
+
+.main_photo {
+  width: 350px;
+}
+
+.main_photo_image {
+  max-width: 100%;
+}
+
+.content {
+  margin: 0;
+  padding: 20px;
+  width: 550px;
+}
+
+.product_name {
+  font-weight: 700;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.product_category {
+  margin-bottom: 30px;
+  width: 340px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.product_category_link {
+  transition: color .1s linear;
+}
+
+.product_category_link:hover {
+  color: #0959b5;
+}
+
+.product_price {
+  width: 340px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.line_through_price {
+  margin-right: 10px;
+  font-size: inherit;
+  font-weight: inherit;
+  text-decoration: line-through;
+  color: #c1c1c1;
+}
+.price {
+  margin-right: 30px;
+  font-size: inherit;
+  font-weight: inherit;
+  color: #909090;
+}
+
+.sale_price {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.sale_label {
+  text-transform: uppercase;
+}
+
+.product_availability {
+  width: 340px;
+  padding: 10px 0;
+  background-color: #ebebeb;
+}
+
+.product_availability_text {
+  padding: 3px 20px;
+}
+
+.product_availability_link {
+  transition: color .1s linear;
+}
+
+.product_availability_link:hover {
+  color: #0959b5;
+}
+
+.product_buttons {
+  margin: 50px 0;
+}
+
+.in_store_button {
+  margin-right: 20px;
+  padding: 10px 70px;
+  background-color: #006be5;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: background-color .2s linear;
+}
+
+.in_store_button:hover {
+  background-color: #0959b5;
+}
+
+.in_favourite_button {
+  right: 0;
+  padding: 10px 70px;
+  outline: 2px solid #d6d5d5;
+  outline-offset: -2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: black;
+  transition: color .1s linear;
+}
+
+.in_favourite_button:hover {
+  color: #006be5;
+}
+
+.product_info {
+  width: 450px;
+  margin-bottom: 50px;
+}
+
+.product_description {
+  margin: 0;
+}
+
+.product_details {
+  margin: 0;
+}
+
+.social_networks {
+  display: flex;
+  align-items: center;
+}
+
+.social_networks_share {
+  text-transform: uppercase;
+  margin-right: 20px;
+}
+
+.social_networks_images {
+  padding: 3px 3px;
+  border-radius: 50%;
+  transition: background-color .1s linear;
+}
+
+.social_networks_images:hover {
+  background-color: #006be5;
+}
+
+.social_networks_counter {
+  position: relative;
+}
+
+.social_networks_counter_num {
+  position: absolute;
+  left: 15px;
+  top: 5px;
+}
