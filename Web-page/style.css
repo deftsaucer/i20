@@ -23,7 +23,7 @@
 }
 
 * {
-  font-family: "Circe";
+  font-family: "Circe", sans-serif;
   font-weight: 300;
   font-size: 13px;
 }
@@ -252,11 +252,17 @@
 }
 
 .social_networks_counter {
+  margin-left: 10px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  background-color: #e4e4e4;
   position: relative;
 }
 
-.social_networks_counter_num {
-  position: absolute;
-  left: 15px;
-  top: 5px;
-}
+.social_networks_counter::before {
+    content: '';
+    position: absolute;
+    left: -15px;
+    bottom: 6px;
+    border: 8px solid transparent;
+    border-right: 8px solid #e4e4e4;
