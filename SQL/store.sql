@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3308
--- Время создания: Июл 21 2022 г., 08:51
+-- Время создания: Июл 22 2022 г., 07:35
 -- Версия сервера: 8.0.29
 -- Версия PHP: 7.1.33
 
@@ -115,6 +115,7 @@ CREATE TABLE `products` (
   `price` int NOT NULL,
   `new_price` int NOT NULL,
   `sale_price` int NOT NULL,
+  `active_status` tinyint(1) NOT NULL,
   `description` varchar(2047) NOT NULL,
   `main_photo_id` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -123,10 +124,10 @@ CREATE TABLE `products` (
 -- Дамп данных таблицы `products`
 --
 
-INSERT INTO `products` (`id`, `main_category_id`, `name`, `price`, `new_price`, `sale_price`, `description`, `main_photo_id`) VALUES
-(1, 2, 'Штаны Zara', 2990, 2590, 2400, 'qwerty', 2),
-(2, 1, 'Куртка Nike', 6990, 5590, 5400, 'qwerty', 1),
-(3, 3, 'Кроссоки Adidas', 4990, 3590, 3400, 'qwerty', 2);
+INSERT INTO `products` (`id`, `main_category_id`, `name`, `price`, `new_price`, `sale_price`, `active_status`, `description`, `main_photo_id`) VALUES
+(1, 2, 'Штаны Zara', 2990, 2590, 2400, 1, 'qwerty', 2),
+(2, 1, 'Куртка Nike', 6990, 5590, 5400, 1, 'qwerty', 1),
+(3, 3, 'Кроссоки Adidas', 4990, 3590, 3400, 1, 'qwerty', 2);
 
 --
 -- Индексы сохранённых таблиц
