@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3308
--- Время создания: Июл 22 2022 г., 15:04
+-- Время создания: Июл 23 2022 г., 17:30
 -- Версия сервера: 8.0.29
 -- Версия PHP: 7.1.33
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- База данных: `store`
 --
+CREATE DATABASE IF NOT EXISTS `store` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+USE `store`;
 
 -- --------------------------------------------------------
 
@@ -27,10 +29,11 @@ SET time_zone = "+00:00";
 -- Структура таблицы `categories`
 --
 
-CREATE TABLE `categories` (
-  `id` int NOT NULL,
-  `category_name` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE IF NOT EXISTS `categories` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `category_name` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Дамп данных таблицы `categories`
@@ -48,9 +51,11 @@ INSERT INTO `categories` (`id`, `category_name`) VALUES
 -- Структура таблицы `categoryproducts`
 --
 
-CREATE TABLE `categoryproducts` (
+CREATE TABLE IF NOT EXISTS `categoryproducts` (
   `category_id` int NOT NULL,
-  `product_id` int NOT NULL
+  `product_id` int NOT NULL,
+  KEY `product_id` (`product_id`),
+  KEY `category_id` (`category_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
@@ -129,11 +134,12 @@ INSERT INTO `categoryproducts` (`category_id`, `product_id`) VALUES
 -- Структура таблицы `photos`
 --
 
-CREATE TABLE `photos` (
-  `id` int NOT NULL,
+CREATE TABLE IF NOT EXISTS `photos` (
+  `id` int NOT NULL AUTO_INCREMENT,
   `link` varchar(255) NOT NULL,
-  `alt` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `alt` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Дамп данных таблицы `photos`
@@ -154,9 +160,11 @@ INSERT INTO `photos` (`id`, `link`, `alt`) VALUES
 -- Структура таблицы `productphotos`
 --
 
-CREATE TABLE `productphotos` (
+CREATE TABLE IF NOT EXISTS `productphotos` (
   `product_id` int NOT NULL,
-  `photo_id` int NOT NULL
+  `photo_id` int NOT NULL,
+  KEY `product_id` (`product_id`),
+  KEY `photo_id` (`photo_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
@@ -238,8 +246,8 @@ INSERT INTO `productphotos` (`product_id`, `photo_id`) VALUES
 -- Структура таблицы `products`
 --
 
-CREATE TABLE `products` (
-  `id` int NOT NULL,
+CREATE TABLE IF NOT EXISTS `products` (
+  `id` int NOT NULL AUTO_INCREMENT,
   `main_category_id` int NOT NULL,
   `name` varchar(255) NOT NULL,
   `price` int NOT NULL,
@@ -247,8 +255,11 @@ CREATE TABLE `products` (
   `sale_price` int NOT NULL,
   `active_status` tinyint(1) NOT NULL,
   `description` varchar(2047) NOT NULL,
-  `main_photo_id` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `main_photo_id` int NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `main_category_id` (`main_category_id`),
+  KEY `main_photo_id` (`main_photo_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Дамп данных таблицы `products`
@@ -307,66 +318,6 @@ INSERT INTO `products` (`id`, `main_category_id`, `name`, `price`, `new_price`, 
 (50, 4, 'Верхняя одежда 11', 3990, 3490, 3190, 1, 'qwerty', 7),
 (51, 4, 'Верхняя одежда 12', 3490, 3290, 3090, 1, 'qwerty', 7),
 (52, 4, 'Верхняя одежда 13', 3490, 3290, 3090, 1, 'qwerty', 7);
-
---
--- Индексы сохранённых таблиц
---
-
---
--- Индексы таблицы `categories`
---
-ALTER TABLE `categories`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `categoryproducts`
---
-ALTER TABLE `categoryproducts`
-  ADD KEY `product_id` (`product_id`),
-  ADD KEY `category_id` (`category_id`);
-
---
--- Индексы таблицы `photos`
---
-ALTER TABLE `photos`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `productphotos`
---
-ALTER TABLE `productphotos`
-  ADD KEY `product_id` (`product_id`),
-  ADD KEY `photo_id` (`photo_id`);
-
---
--- Индексы таблицы `products`
---
-ALTER TABLE `products`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `main_category_id` (`main_category_id`),
-  ADD KEY `main_photo_id` (`main_photo_id`);
-
---
--- AUTO_INCREMENT для сохранённых таблиц
---
-
---
--- AUTO_INCREMENT для таблицы `categories`
---
-ALTER TABLE `categories`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT для таблицы `photos`
---
-ALTER TABLE `photos`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT для таблицы `products`
---
-ALTER TABLE `products`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
