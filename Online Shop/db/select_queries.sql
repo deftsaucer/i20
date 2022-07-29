@@ -15,7 +15,7 @@ select c.category_name, c.category_description
 from categories as c
 where c.id = 4;
 
-select p.name, p.main_category_id, ph.link, ph.alt
+select p.name, c.category_id, ph.link, ph.alt
 from products as p 
 	join categoryproducts as cp on cp.product_id = p.id 
 	join categories as c on c.id = cp.category_id 
