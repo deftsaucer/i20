@@ -1,0 +1,96 @@
+@font-face {
+  font-family: "Circe";
+  src:url("fonts/circe_300.woff2"),
+  url("fonts/circe_300.woff"),
+  url("fonts/circe_300.ttf");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Circe";
+  src:url("fonts/circe_600.woff2"),
+  url("fonts/circe_600.woff"),
+  url("fonts/circe_600.ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Circe";
+  src:url("fonts/circe_700.woff2"),
+  url("fonts/circe_700.woff"),
+  url("fonts/circe_700.ttf");
+  font-weight: 700
+}
+
+* {
+  font-family: "Circe", sans-serif;
+  font-weight: 300;
+}
+
+.container {
+  margin: 0 auto;
+  width: 1200px;
+  height: auto;
+
+}
+
+.nav_link {
+  margin-left: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.content {
+  margin: 0 auto;
+  width: 800px;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.item {
+  margin: 10px 5px;
+  height: 220px;
+  width: 23%;
+  border: 2px solid #e9e9e9;
+  border-radius: 10px;
+}
+
+figure {
+  display: block;
+  text-align: center;
+}
+
+.item_img {
+  max-width: 100%;
+}
+
+.return_button {
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.return_button_img {
+  padding: 3px 7px;
+  padding-top: 5px;
+  width: 30px;
+}
+
+.form_content {
+  margin: 0 auto;
+  padding: 40px;
+  width: 350px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+}
+
+.form_input {
+  width: 100%;
+}

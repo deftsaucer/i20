@@ -1,0 +1,268 @@
+@font-face {
+  font-family: "Circe";
+  src:url("fonts/circe_300.woff2"),
+  url("fonts/circe_300.woff"),
+  url("fonts/circe_300.ttf");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Circe";
+  src:url("fonts/circe_600.woff2"),
+  url("fonts/circe_600.woff"),
+  url("fonts/circe_600.ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Circe";
+  src:url("fonts/circe_700.woff2"),
+  url("fonts/circe_700.woff"),
+  url("fonts/circe_700.ttf");
+  font-weight: 700
+}
+
+* {
+  font-family: "Circe", sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+}
+
+ a {
+   text-decoration: none;
+   color: #006be5;
+ }
+
+.container {
+  margin: 100px auto;
+  width: 1410px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/*==========LIST_PHOTO==========*/
+
+.list_photo {
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 100px;
+}
+
+.list_photo_image1, .list_photo_image2, .list_photo_image3 {
+  padding: 15px 0;
+  max-width: 100px;
+}
+
+.list_photo_image1:hover {
+   transform: translate(350px, 200px) scale(3.5);
+}
+
+.list_photo_image2:hover {
+   transform: translate(350px, 0) scale(3.5);
+}
+
+.list_photo_image3:hover {
+   transform: translate(350px, -200px) scale(3.5);
+}
+
+.object {
+    transition: all 1s ease-in-out;
+}
+
+/*==========MAIN_PHOTO==========*/
+
+.main_photo {
+  width: 350px;
+}
+
+.main_photo_image {
+  max-width: 100%;
+}
+
+/*==========MAIN_CONTENT==========*/
+
+.content {
+  margin: 0;
+  width: 550px;
+}
+
+/*==========PRODUCT_NAME==========*/
+
+.product_name {
+  margin: 0;
+  font-weight: 700;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+/*==========PRODUCT_CATEGORY==========*/
+
+.product_category {
+  margin-top: 20px;
+  width: 340px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.product_category_link {
+  transition: color .1s linear;
+}
+
+.product_category_link:hover {
+  color: #0959b5;
+}
+
+/*==========PRODUCT_PRICE==========*/
+
+.product_price {
+  margin-top: 30px;
+  width: 340px;
+
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.line_through_price {
+  font-size: inherit;
+  font-weight: inherit;
+  text-decoration: line-through;
+  color: #c1c1c1;
+}
+.price {
+  margin-left: 10px;
+  font-size: inherit;
+  font-weight: inherit;
+  color: #909090;
+}
+
+.sale_price {
+  margin-left: 30px;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.sale_label {
+  text-transform: uppercase;
+}
+
+/*==========PRODUCT_AVAILABILITY==========*/
+
+.product_availability {
+  margin-top: 10px;
+  width: 340px;
+  padding: 10px 0;
+  background-color: #ebebeb;
+}
+
+.product_availability_text {
+  padding: 3px 20px;
+}
+
+.product_availability_link {
+  transition: color .1s linear;
+}
+
+.product_availability_link:hover {
+  color: #0959b5;
+}
+
+/*==========PRODUCT_BUTTONS==========*/
+
+.product_buttons {
+  margin-top: 50px;
+}
+
+.in_store_button {
+  padding: 10px 70px;
+  background-color: #006be5;
+  border: none;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: background-color .2s linear;
+}
+
+.in_store_button:hover {
+  background-color: #0959b5;
+}
+
+.in_favourite_button {
+  margin-left: 20px;
+  padding: 10px 70px;
+  border: 2px solid #d6d5d5;
+  background-color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: black;
+  transition: color .1s linear;
+}
+
+.in_favourite_button:hover {
+  color: #006be5;
+}
+
+.product_count_buttons {
+  margin-top: 10px;
+  margin-left: 60px;
+}
+
+.product_count_display {
+  width: 20px;
+  text-align: center;
+}
+
+/*==========PRODUCT_INFO==========*/
+
+.product_info {
+  width: 450px;
+  margin-top: 20px;
+}
+
+.product_description {
+  margin: 0;
+}
+
+.product_details {
+  margin: 0;
+}
+
+/*==========SOCIAL_NETWORKS==========*/
+
+.social_networks {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.social_networks_share {
+  text-transform: uppercase;
+  margin-right: 20px;
+}
+
+.social_networks_images {
+  padding: 3px 3px;
+  border-radius: 50%;
+  transition: background-color .1s linear;
+}
+
+.social_networks_images:hover {
+  background-color: #006be5;
+}
+
+.social_networks_counter {
+  margin-left: 10px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  background-color: #e4e4e4;
+  position: relative;
+}
+
+.social_networks_counter::before {
+    content: '';
+    position: absolute;
+    left: -15px;
+    bottom: 6px;
+    border: 8px solid transparent;
+    border-right: 8px solid #e4e4e4;
