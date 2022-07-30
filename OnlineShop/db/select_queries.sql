@@ -17,7 +17,7 @@ where c.id = 4;
 select p.name, cc.category_name, ph.link, ph.alt
 from products as p 
 	join categoryproducts as cp on cp.product_id = p.id 
-	join categories as c on c.id = cp.category_id 
+	join categories as c on c.id = cp.category_id
     join categories as cc on cc.id = p.main_category_id
 	join photos as ph on ph.id = p.main_photo_id
 where c.id = 4
