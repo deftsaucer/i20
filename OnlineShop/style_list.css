@@ -94,3 +94,10 @@ figure {
 .form_input {
   width: 100%;
 }
+
+.item_name {
+  text-decoration: none;
+}
+
+.item_count {
+}

@@ -1,3 +1,10 @@
+<?php
+require 'func.php';
+$product = selectProduct();
+$product_cat = selectProductCategories();
+$product_ph = selectProductPhotos();
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -11,28 +18,33 @@
   <div class="container">
 
     <div class="list_photo">
-      <img src="images/product_image1.png" alt="photo" class="object list_photo_image1">
-      <img src="images/product_image2.png" alt="photo" class="object list_photo_image2">
-      <img src="images/product_image3.png" alt="photo" class="object list_photo_image3">
+<?php
+foreach ($product_ph as $photo) {
+?>
+      <img src="<?=$photo[link] ?>" alt="<?=$photo[alt] ?>" class="object list_photo_image1">
     </div>
+<?php
+}
+?>
+
 
     <div class="main_photo">
-      <img src="images/product_image1.png" alt="photo" class="main_photo_image">
+      <img src="<?=$product[main_photo_id]?>" alt="photo" class="main_photo_image">
     </div>
 
     <div class="content">
-      <h1 class="product_name">Рубашка Medicine</h1>
+      <h1 class="product_name"><?=$product[name]?></h1>
 
       <div class="product_category">
-        <a href="#" class="product_category_link">Рубашки Medicine</a>
+        <a href="#" class="product_category_link">Medicine</a>
         <a href="#" class="product_category_link">Все модели Medicine</a>
         <a href="#" class="product_category_link">Рубашки</a>
       </div>
 
       <div class="product_price">
-        <span class="line_through_price">2 699</span>
-        <span class="price">2 499 ₽</span>
-        <span class="sale_price">2 227 ₽</span>
+        <span class="line_through_price"><?=$product[price]?></span>
+        <span class="price"><?=$product[new_price]?></span>
+        <span class="sale_price"><?=$product[sale_price]?></span>
         <span class="sale_label"> - с промокодом</span>
       </div>
 
@@ -59,9 +71,7 @@
       </div>
 
       <div class="product_info">
-        <p class="product_description">Рубашка Medicine выполнена из вискозной ткани с клетчатым узором.</p>
-        <p class="product_details">Детали: прямой крой; отложной воротник; планка и манжеты на пуговицах;
-        карман на груди.</p>
+        <p class="product_description"><?=$product[description]?></p>
       </div>
 
       <div class="social_networks">
