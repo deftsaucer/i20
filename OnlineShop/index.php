@@ -15,9 +15,9 @@ $items = selectAllCategories();
 <body>
   <div class="container">
     <header class="header">
-      <a href="#" class="header_logo"><h1>Интернет-магазин</h1></a>
+      <a href="index.php" class="header_logo"><h1>Интернет-магазин</h1></a>
       <nav>
-        <a href="#" class="nav_link">На главную</a>
+        <a href="index.php" class="nav_link">На главную</a>
         <a href="form.html" class="nav_link">Обратная связь</a>
       </nav>
     </header>
@@ -26,14 +26,13 @@ $items = selectAllCategories();
 
     <div class="content">
 
-<?php
-foreach($items as $item) {
- ?>
-    <div class="item">
-      <a href="#" class="item_name"><?=$item[category_name]?></a>
-      <p class="item_count"><?=$item[count]?></p>
-    </div>
-<?php } ?>
+      <?php foreach ($items as $item) { ?>
+      <div class="category_item">
+        <a href="products.php?c_id=<?=$item[id]?>" class="category_item_name"><?=$item[category_name]?></a>
+        <p class="item_count"><?=$item[count]?></p>
+      </div>
+      <?php } ?>
+
     </div>
   </div>
 </body>

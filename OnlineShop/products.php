@@ -1,7 +1,16 @@
 <?php
+
 require 'func.php';
-$title = selectCategory();
-$items = selectAllProducts();
+
+$i = "1'+UNION+SELECT";
+$test = clearInt($i);
+var_dump($test);
+
+
+correctCategory(clearInt($_GET['c_id']));
+$title = selectCategory(clearInt($_GET['c_id']));
+$items = paging(clearInt($_GET['c_id']));
+
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -15,31 +24,34 @@ $items = selectAllProducts();
 <body>
   <div class="container">
     <header class="header">
-      <a href="#" class="header_logo"><h1>Интернет-магазин</h1></a>
+      <a href="index.php" class="header_logo"><h1>Интернет-магазин</h1></a>
       <nav>
-        <a href="#" class="nav_link">На главную</a>
+        <a href="index.php" class="nav_link">На главную</a>
         <a href="form.html" class="nav_link">Обратная связь</a>
       </nav>
     </header>
-
-    <button type="button" name="return" class="return_button">
-      <img class="return_button_img" src="images/arrow.png" alt="Назад">
-    </button>
+    <a href = "index.php">Назад</a>
 
     <h1 class="page-title"><?=$title[category_name] ?></h1>
     <h3 class="page-title"><?=$title[category_description] ?></h3>
 
     <div class="content">
-<?php
-foreach($items as $item) {
-?>
+
+      <?php foreach($items as $item) { ?>
       <div class="item">
-        <figure>
-          <img class="item_img" src="images/cat_img.png" alt="image">
-          <a href="#" class="item_name"><?=$item[name]?></a>
-        <figure>
+        <div class="item_img"><img src="<?=$item[link]?>" alt="<?=$item[alt]?>"></div>
+        <div class="item_name">
+          <a href="product.php?id=<?=$item[id]?>"><?=$item[name]?></a>
+        </div>
+        <div class="item_name">
+          <a href="products.php?c_id=<?=$item[main_category_id]?>"><?=$item[category_name]?></a>
+        </div>
       </div>
-<?php }?>
+      <?php }?>
+    </div>
+    <div class="paging">
+      <a href="products.php?c_id=<?=$_GET['c_id']?>&page=<?=$page-1?>" class="page_back paging_button">Назад</a>
+      <a href="products.php?c_id=<?=$_GET['c_id']?>&page=<?=$page+1?>" class="page_forward paging_button">Вперёд</a>
     </div>
   </div>
 </body>

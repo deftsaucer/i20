@@ -33,12 +33,51 @@
    color: #006be5;
  }
 
+
+
+.header_container {
+  margin: 0 auto;
+  width: 1200px;
+  height: auto;
+  }
+
+.header {
+   display: flex;
+   justify-content: space-between;
+   align-items: baseline;
+ }
+
+ .header a {
+   text-decoration: none;
+   color: black;
+ }
+
+ .header a:visited {
+   color: black;
+ }
+
+ .header_logo {
+   font-size: 36px;
+ }
+
+.nav_link {
+  font-size: 15px;
+  margin-left: 20px;
+ }
+
+.header_return_link {
+  font-size: 15px;
+  color: black;
+}
+
 .container {
   margin: 100px auto;
   width: 1410px;
   display: flex;
   justify-content: space-between;
 }
+
+
 
 /*==========LIST_PHOTO==========*/
 

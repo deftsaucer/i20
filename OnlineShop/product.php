@@ -1,8 +1,12 @@
 <?php
 require 'func.php';
-$product = selectProduct();
-$product_cat = selectProductCategories();
-$product_ph = selectProductPhotos();
+
+correctProduct(clearInt($_GET['id']));
+
+$product = selectProduct(clearInt($_GET['id']));
+$product_cat = selectProductCategories(clearInt($_GET['id']));
+$product_main_ph = selectMainPhoto(clearInt($_GET['id']));
+$product_ph = selectProductPhotos(clearInt($_GET['id']));
 ?>
 
 <!DOCTYPE html>
@@ -15,30 +19,39 @@ $product_ph = selectProductPhotos();
   <link rel="stylesheet" href="style_page.css">
 </head>
 <body>
+  <div class="header_container">
+    <header class="header">
+      <a href="index.php" class="header_logo">Интернет-магазин</a>
+      <nav>
+        <a href="index.php" class="nav_link">На главную</a>
+        <a href="form.html" class="nav_link">Обратная связь</a>
+      </nav>
+    </header>
+    <?php pageRef($_SERVER['HTTP_REFERER'], $product[main_category_id]) ?>
+  </div>
+
   <div class="container">
 
     <div class="list_photo">
-<?php
-foreach ($product_ph as $photo) {
-?>
+      <?php
+      foreach ($product_ph as $photo) {
+      ?>
       <img src="<?=$photo[link] ?>" alt="<?=$photo[alt] ?>" class="object list_photo_image1">
+      <?php } ?>
     </div>
-<?php
-}
-?>
-
 
     <div class="main_photo">
-      <img src="<?=$product[main_photo_id]?>" alt="photo" class="main_photo_image">
+      <img src="<?=$product_main_ph[link]?>" alt="<?=$product_main_ph[alt]?>" class="main_photo_image">
     </div>
 
     <div class="content">
       <h1 class="product_name"><?=$product[name]?></h1>
 
       <div class="product_category">
-        <a href="#" class="product_category_link">Medicine</a>
-        <a href="#" class="product_category_link">Все модели Medicine</a>
-        <a href="#" class="product_category_link">Рубашки</a>
+
+        <?php foreach ($product_cat as $cat) { ?>
+        <a href="products.php?c_id=<?=$cat[id]?>" class="product_category_link"><?=$cat[category_name]?></a>
+        <?php } ?>
       </div>
 
       <div class="product_price">
