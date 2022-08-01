@@ -45,8 +45,8 @@ $items = paging(clearInt($_GET['c_id']));
       <?php }?>
     </div>
     <div class="paging">
-      <a href="products.php?c_id=<?=$_GET['c_id']?>&page=<?=$page-1?>" class="page_back paging_button">Назад</a>
-      <a href="products.php?c_id=<?=$_GET['c_id']?>&page=<?=$page+1?>" class="page_forward paging_button">Вперёд</a>
+      <a href="products.php?c_id=<?=clearInt($_GET['c_id'])?>&page=<?=$page-1?>" class="page_back paging_button">Назад</a>
+      <a href="products.php?c_id=<?=clearInt($_GET['c_id'])?>&page=<?=$page+1?>" class="page_forward paging_button">Вперёд</a>
     </div>
   </div>
 </body>
