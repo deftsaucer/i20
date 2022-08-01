@@ -2,11 +2,6 @@
 
 require 'func.php';
 
-$i = "1'+UNION+SELECT";
-$test = clearInt($i);
-var_dump($test);
-
-
 correctCategory(clearInt($_GET['c_id']));
 $title = selectCategory(clearInt($_GET['c_id']));
 $items = paging(clearInt($_GET['c_id']));
