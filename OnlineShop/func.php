@@ -133,11 +133,13 @@ function pageRef($first, $second) {
 }
 
 function paging($c_id) {
-  $on_page = 12;
-
   global $page;
   global $num_pages;
   global $link;
+
+  $on_page = 12;
+  $page = $_GET['page'];
+
 
   $sql = "select count(*) as count
           from products as p
@@ -149,12 +151,11 @@ function paging($c_id) {
   $count = $count['count'];
   $num_pages = ceil($count / $on_page);
 
-  if(isset($_GET['page']) and ($_GET['page'] > 0) and ($_GET['page'] <= $num_pages)) {
-    $page = $_GET['page'];
+  if(($_GET['page'] < 1) or ($_GET['page'] > $num_pages)) {
+    header('Location: http://localhost/OnlineShop/error_404.php');
   }
-  else {
-    $page = 1;
-  }
+
+
 
   $st = ($page - 1) * $on_page;
 
@@ -208,10 +209,6 @@ function checkFormFeedback() {
   }
 }
 
-/*function cookieVal() {
-  if(isset($_COOKIE)) {
-    return $_COOKIE;
-  }
-}*/
+
 
 ?>

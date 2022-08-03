@@ -28,13 +28,13 @@ require 'func.php';
       <input class="form_input" required type="date" id="date" name="date" value="<?=$_COOKIE['date']?>"><br>
 
       <label for="gender">Пол:</label><br>
-      <input type="radio" required value="male" id="male" name="gender">
+      <input type="radio" required value="male" id="male" name="gender" <?php if($_COOKIE['gender'] == "male") echo "checked" ?>>
       <label for="male">Мужской</label>
 
-      <input type="radio" value="female" id="female" name="gender">
+      <input type="radio" value="female" id="female" name="gender" <?php if($_COOKIE['gender'] == "female") echo "checked" ?>>
       <label for="female">Женский</label>
 
-      <input type="radio" value="none" id="none" name="gender">
+      <input type="radio" value="none" id="none" name="gender" <?php if($_COOKIE['gender'] == "none") echo "checked" ?>>
       <label for="none">Не указывать</label><br>
 
       <label for="theme">Тема обращения:</label><br>
