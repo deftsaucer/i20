@@ -136,14 +136,14 @@ function paging($c_id) {
   $on_page = 12;
 
   global $page;
+  global $num_pages;
+  global $link;
 
   $sql = "select count(*) as count
           from products as p
           	join categoryproducts as cp on cp.product_id = p.id
           where cp.category_id = $c_id and active_status = 1
           group by cp.category_id;";
-  global $num_pages;
-  global $link;
   $result = mysqli_query($link, $sql);
   $count = mysqli_fetch_array($result, MYSQLI_ASSOC);
   $count = $count['count'];
@@ -155,7 +155,6 @@ function paging($c_id) {
   else {
     $page = 1;
   }
-
 
   $st = ($page - 1) * $on_page;
 
