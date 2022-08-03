@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3307
--- Время создания: Авг 03 2022 г., 18:10
+-- Время создания: Авг 03 2022 г., 19:10
 -- Версия сервера: 8.0.24
 -- Версия PHP: 7.1.33
 
@@ -150,7 +150,10 @@ CREATE TABLE `feedback` (
 INSERT INTO `feedback` (`id`, `name`, `email`, `date`, `gender`, `theme`, `question`) VALUES
 (1, 'Al', 'al@mail.ru', '2022-08-01', 'male', 'al', 'al'),
 (2, 'Gr', 'gr@mail.ru', '1990-01-13', 'female', '1234asdf', '<?//\'\'asfd\"||\\\\asdf`;lasfd`<a></a>;'),
-(10, 'Alex', 'alex@gmail.com', '1983-02-24', 'male', 'safdlas;lf', 'dhfkhaslkfhasdfsaddfasf');
+(10, 'Alex', 'alex@gmail.com', '1983-02-24', 'male', 'safdlas;lf', 'dhfkhaslkfhasdfsaddfasf'),
+(14, 'Sdf', 'asfd@mail.ru', '2022-08-23', 'male', 'asdf', 'asdf'),
+(15, 'Sdf', 'asfd@mail.ru', '2022-08-23', 'male', 'asdf', 'asdf'),
+(16, 'Sdf', 'asfd@mail.ru', '2022-08-23', 'male', 'asdf', 'asdf');
 
 -- --------------------------------------------------------
 
@@ -498,7 +501,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT для таблицы `feedback`
 --
 ALTER TABLE `feedback`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT для таблицы `photos`

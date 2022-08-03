@@ -1,7 +1,5 @@
 <?php
 require 'func.php';
-
-/*insertFormFeedback();*/
 ?>
 
 <!DOCTYPE html>
@@ -21,13 +19,13 @@ require 'func.php';
       <?php checkFormFeedback(); ?>
 
       <label for="name">Имя:</label><br>
-      <input class="form_input name" required type="text" id="name" name="name"><br>
+      <input class="form_input name" required type="text" id="name" name="name" value="<?=$_COOKIE['name']?>"><br>
 
       <label for="email">E-mail:</label><br>
-      <input class="form_input email" required type="email" id="email" name="email"><br>
+      <input class="form_input email" required type="email" id="email" name="email" value="<?=$_COOKIE['email']?>"><br>
 
       <label for="date">Дата рождения:</label><br>
-      <input class="form_input" required type="date" id="date" name="date"><br>
+      <input class="form_input" required type="date" id="date" name="date" value="<?=$_COOKIE['date']?>"><br>
 
       <label for="gender">Пол:</label><br>
       <input type="radio" required value="male" id="male" name="gender">

@@ -39,14 +39,18 @@ $items = paging(clearInt($_GET['c_id']));
           <a href="product.php?id=<?=$item['id']?>"><?=$item['name']?></a>
         </div>
         <div class="item_name">
-          <a href="products.php?c_id=<?=$item['main_category_id']?>"><?=$item[category_name]?></a>
+          <a href="products.php?c_id=<?=$item['main_category_id']?>"><?=$item['category_name']?></a>
         </div>
       </div>
       <?php }?>
     </div>
     <div class="paging">
-      <a href="products.php?c_id=<?=$_GET['c_id']?>&page=<?=$page-1?>" class="page_back paging_button">Назад</a>
-      <a href="products.php?c_id=<?=$_GET['c_id']?>&page=<?=$page+1?>" class="page_forward paging_button">Вперёд</a>
+      <?php if ($_GET['page'] > 1) { ?>
+        <a href="products.php?c_id=<?=$_GET['c_id']?>&page=<?=$page-1?>" class="page_back paging_button">Назад</a>
+      <?php }
+      if ($_GET['page'] < $num_pages) {?>
+        <a href="products.php?c_id=<?=$_GET['c_id']?>&page=<?=$page+1?>" class="page_forward paging_button">Вперёд</a>
+      <?php } ?>
     </div>
   </div>
 </body>
