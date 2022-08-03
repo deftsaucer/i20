@@ -146,7 +146,7 @@ function paging($c_id) {
   global $link;
   $result = mysqli_query($link, $sql);
   $count = mysqli_fetch_array($result, MYSQLI_ASSOC);
-  $count = $count[count];
+  $count = $count['count'];
   $num_pages = ceil($count / $on_page);
 
   if(isset($_GET['page']) and ($_GET['page'] > 0) and ($_GET['page'] <= $num_pages)) {
