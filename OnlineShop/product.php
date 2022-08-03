@@ -24,10 +24,10 @@ $product_ph = selectProductPhotos(clearInt($_GET['id']));
       <a href="index.php" class="header_logo">Интернет-магазин</a>
       <nav>
         <a href="index.php" class="nav_link">На главную</a>
-        <a href="form.html" class="nav_link">Обратная связь</a>
+        <a href="form.php" class="nav_link">Обратная связь</a>
       </nav>
     </header>
-    <?php pageRef($_SERVER['HTTP_REFERER'], $product[main_category_id]) ?>
+    <?php pageRef($_SERVER['HTTP_REFERER'], $product['main_category_id']) ?>
   </div>
 
   <div class="container">
@@ -36,28 +36,28 @@ $product_ph = selectProductPhotos(clearInt($_GET['id']));
       <?php
       foreach ($product_ph as $photo) {
       ?>
-      <img src="<?=$photo[link] ?>" alt="<?=$photo[alt] ?>" class="object list_photo_image1">
+      <img src="<?=$photo['link'] ?>" alt="<?=$photo['alt'] ?>" class="object list_photo_image1">
       <?php } ?>
     </div>
 
     <div class="main_photo">
-      <img src="<?=$product_main_ph[link]?>" alt="<?=$product_main_ph[alt]?>" class="main_photo_image">
+      <img src="<?=$product_main_ph['link']?>" alt="<?=$product_main_ph['alt']?>" class="main_photo_image">
     </div>
 
     <div class="content">
-      <h1 class="product_name"><?=$product[name]?></h1>
+      <h1 class="product_name"><?=$product['name']?></h1>
 
       <div class="product_category">
 
         <?php foreach ($product_cat as $cat) { ?>
-        <a href="products.php?c_id=<?=$cat[id]?>" class="product_category_link"><?=$cat[category_name]?></a>
+        <a href="products.php?c_id=<?=$cat['id']?>" class="product_category_link"><?=$cat['category_name']?></a>
         <?php } ?>
       </div>
 
       <div class="product_price">
-        <span class="line_through_price"><?=$product[price]?></span>
-        <span class="price"><?=$product[new_price]?></span>
-        <span class="sale_price"><?=$product[sale_price]?></span>
+        <span class="line_through_price"><?=$product['price']?></span>
+        <span class="price"><?=$product['new_price']?></span>
+        <span class="sale_price"><?=$product['sale_price']?></span>
         <span class="sale_label"> - с промокодом</span>
       </div>
 
@@ -84,7 +84,7 @@ $product_ph = selectProductPhotos(clearInt($_GET['id']));
       </div>
 
       <div class="product_info">
-        <p class="product_description"><?=$product[description]?></p>
+        <p class="product_description"><?=$product['description']?></p>
       </div>
 
       <div class="social_networks">

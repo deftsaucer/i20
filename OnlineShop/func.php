@@ -160,4 +160,44 @@ function paging($c_id) {
 
   return selectAllProducts($c_id, $st, $on_page);
 }
+
+function insertFormFeedback() {
+  $name = $_POST['name'];
+  $email = $_POST['email'];
+  $date = $_POST['date'];
+  $gender = $_POST['gender'];
+  $theme = $_POST['theme'];
+  $question = $_POST['question'];
+  if(!empty($_POST)) {
+    $sql = "insert into feedback (name, email, date, gender, theme, question)
+            values (?, ?, ?, ?, ?, ?)";
+    global $link;
+    if ($stmt = mysqli_prepare($link, $sql)) {
+      mysqli_stmt_bind_param($stmt, "ssssss", $name, $email, $date, $gender, $theme, $question);
+      mysqli_stmt_execute($stmt);
+      mysqli_stmt_close($stmt);
+      echo "<p style='color:#10c906'>Обращение отправленно</p>";
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+}
+
+function checkFormFeedback() {
+  if(!preg_match('/^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$/', $_POST['name'])) {
+    echo "<p style='color:#ff4242'>Некорректное имя. Допустимы символы латинского алфавита верхнего и нижнего регистра, цифры. Длина имени от 2 до 20 символов.</p>";
+    echo "<style>.form_input.name{background-color: #ff7e7e;}</style>";
+    return false;
+  }
+
+  if(!preg_match('/^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i', $_POST['email'])) {
+    echo "<p style='color:#ff4242'>Некорректный адрес электронной почты</p>";
+    echo "<style>.form_input.name{background-color: #ff7e7e;}</style>";
+    return false;
+  }
+
+  return insertFormFeedback();
+}
 ?>
