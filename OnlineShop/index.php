@@ -28,7 +28,7 @@ $items = selectAllCategories();
 
       <?php foreach ($items as $item) { ?>
       <div class="category_item">
-        <a href="products.php?c_id=<?=$item['id']?>" class="category_item_name"><?=$item['category_name']?></a>
+        <a href="products.php?c_id=<?=$item['id']?>&page=1" class="category_item_name"><?=$item['category_name']?></a>
         <p class="item_count"><?=$item['count']?></p>
       </div>
       <?php } ?>
