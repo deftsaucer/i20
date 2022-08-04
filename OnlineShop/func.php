@@ -167,8 +167,8 @@ function insertFormFeedback() {
   $email = $_POST['email'];
   $date = $_POST['date'];
   $gender = $_POST['gender'];
-  $theme = $_POST['theme'];
-  $question = $_POST['question'];
+  $theme = htmlspecialchars($_POST['theme']);
+  $question = htmlspecialchars($_POST['question']);
 
   setcookie("name", $name, time() + (3600 * 24 * 30));
   setcookie("email", $email, time() + (3600 * 24 * 30));
