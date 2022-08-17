@@ -136,6 +136,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'drupal/bootstrap' => array(
+            'pretty_version' => '3.25.0',
+            'version' => '3.25.0.0',
+            'reference' => '8.x-3.25',
+            'type' => 'drupal-theme',
+            'install_path' => __DIR__ . '/../../web/themes/contrib/bootstrap',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'drupal/captcha' => array(
             'pretty_version' => '1.4.0',
             'version' => '1.4.0.0',
