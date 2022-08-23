@@ -11,7 +11,7 @@ regions:
   header: 'Шапка'
   navigation: 'Навигация'
   content: 'Основной контент'
-  footer: 'Footer'
+  footer: 'Подвал'
 
 libraries-extend:
   bootstrap/framework:

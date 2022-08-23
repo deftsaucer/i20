@@ -1,7 +1,9 @@
 framework:
   css:
     theme:
-      css/style.css: {}
+      assets/style.css: {}
+  js:
+    assets/components.js: {}
 
 # Uncomment for LESS source JavaScript files.
 #  js:

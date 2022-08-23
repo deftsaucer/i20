@@ -40,6 +40,8 @@
         "drupal/redirect": "^1.7",
         "drupal/shariff": "^1.7",
         "drupal/simple_sitemap": "^4.1",
+        "drupal/svg_image": "^1.16",
+        "drupal/svg_image_field": "^2.1",
         "drupal/twig_field_value": "^2.0",
         "drupal/twig_tweak": "^3.1",
         "drupal/ultimate_cron": "^2.0@alpha",

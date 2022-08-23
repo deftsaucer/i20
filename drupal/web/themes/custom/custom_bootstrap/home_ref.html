@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="title" content="Sitename"/>
+  <meta name="Generator" content="Drupal 8 (https://www.drupal.org)"/>
+  <meta name="MobileOptimized" content="width"/>
+  <meta name="HandheldFriendly" content="true"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+  <link rel="shortcut icon" href="../favicon.ico" type="image/vnd.microsoft.icon"/>
+  <title>Home | Sitename</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+
+  <!-- Drupal files, need only for slice -->
+  <script type="application/json" data-drupal-selector="drupal-settings-json">
+    {
+      "path": {
+        "baseUrl": "/",
+        "scriptPath": null,
+        "pathPrefix": "",
+        "currentPath": "",
+        "currentPathIsAdmin": false,
+        "isFront": true,
+        "currentLanguage": "en"
+      },
+      "pluralDelimiter": "\u0003",
+      "ajaxPageState": {
+        "libraries": "",
+        "theme": "common",
+        "theme_token": null
+      },
+      "ajaxTrustedUrl": {},
+      "views": {
+        "ajax_path": "/views/ajax",
+        "ajaxViews": {}
+      },
+      "user": {
+        "uid": 0
+      }
+    }
+  </script>
+  <script src="assets/context/drupal/assets/vendor/jquery/jquery.js"></script>
+  <script src="assets/context/drupal/assets/vendor/jquery-once/jquery.once.js"></script>
+  <script src="assets/context/drupal/assets/vendor/domready/ready.min.js"></script>
+  <script src="assets/context/drupal/misc/drupalSettingsLoader.js"></script>
+  <script src="assets/context/drupal/misc/drupal.js"></script>
+  <script src="assets/context/drupal/misc/drupal.init.js"></script>
+  <script src="assets/context/drupal/misc/debounce.js"></script>
+  <link rel="stylesheet" href="assets/context/drupal/modules/system/css/components/align.module.css">
+  <link rel="stylesheet" href="assets/context/drupal/modules/system/css/components/hidden.module.css">
+  <link rel="stylesheet" href="assets/context/drupal/themes/stable/css/system/components/js.module.css">
+  <link rel="stylesheet" href="assets/context/drupal/themes/classy/css/components/form.css">
+  <!-- End Drupal files -->
+
+  <!-- Libraries -->
+  <script src="assets/libs/js-polyfills/polyfill.js"></script>
+
+  <!-- position sticky polyfill -->
+  <script src="assets/libs/stickyfilljs/dist/stickyfill.min.js"></script>
+
+  <script src="assets/libs/object-fit-images/dist/ofi.min.js"></script>
+  <!-- End libraries -->
+
+  <!-- Custom files -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+          crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/components.js"></script>
+  <link rel="stylesheet" href="assets/libs/select2/dist/css/select2.min.css">
+  <script src="assets/libs/select2/dist/js/select2.full.js"></script>
+  <!-- End custom files -->
+</head>
+<body>
+<div class="page">
+  <header>
+    <nav class="navbar navbar-expand-lg flex-wrap navbar-dark text-light bg-dark">
+      <div class="container d-flex">
+        <div class="col-12 col-lg-8 d-flex align-items-center">
+          <div class="navbar-brand d-flex align-items-center col-8 col-lg-6 m-0">
+            <a href="/" class="site-logo d-block">
+              <img src="../logo.svg" alt="">
+            </a>
+            <div>
+              <a href="/" class="site-title">Bootcamp</a>
+            </div>
+          </div>
+
+
+        </div>
+        <button class="navbar-toggler collapsed order-1 order-lg-0 mt-3 mt-lg-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <form class="d-flex col-9 col-lg-4 order-0 position-relative mt-3 mt-lg-0">
+          <input class="form-control " type="search" placeholder="Search" aria-label="Search">
+          <button class="btn position-absolute" style="right: 0" type="submit">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+                 viewBox="0 0 16 16">
+              <path
+                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+            </svg>
+          </button>
+        </form>
+
+        <div class="collapse order-3 navbar-collapse justify-content-md-end flex-wrap col-md-9"
+             id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto justify-content-between dropdown-menu-dark w-100">
+            <li class="nav-item dropdown-menu-dark">
+              <a href="#" class="nav-item px-2 nav-link px-xl-4">Applications</a>
+            </li>
+            <li class="nav-item dropdown-menu-dark dropdown">
+              <a href="#" class="nav-item px-2 nav-link dropdown-toggle px-xl-4" role="button" data-bs-toggle="dropdown"
+                 aria-expanded="false" title="Expand menu Products">
+                Products
+              </a>
+              <ul class="dropdown-menu bg-dark p-0">
+                <li class="nav-item dropdown-menu-dark">
+                  <a href="#" class="px-2 dropdown-item nav-link px-xl-4">Heating & Plumbing</a>
+                </li>
+                <li class="nav-item dropdown-menu-dark">
+                  <a href="#" class="px-2 dropdown-item nav-link px-xl-4">Rail</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown-menu-dark">
+              <a href="#" class="nav-item px-2 nav-link px-xl-4">Bootcamp Insights</a>
+            </li>
+            <li class="nav-item dropdown-menu-dark dropdown">
+              <a href="#" class="nav-item px-2 nav-link dropdown-toggle px-xl-4" role="button" data-bs-toggle="dropdown"
+                 aria-expanded="false" title="Expand menu Services">
+                Service Center
+              </a>
+              <ul class="dropdown-menu bg-dark p-0">
+                <li class="nav-item dropdown-menu-dark">
+                  <a href="#" class="px-4 dropdown-item nav-link">Building Services</a>
+                </li>
+                <li class="nav-item dropdown-menu-dark">
+                  <a href="#" class="px-4 dropdown-item nav-link">Rail Services</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown-menu-dark">
+              <a href="#" class="nav-item px-2 nav-link px-xl-4">Career</a>
+            </li>
+            <li class="nav-item dropdown-menu-dark">
+              <a href="#" class="nav-item px-2 nav-link px-xl-4">About Us</a>
+            </li>
+            <li class="nav-item dropdown-menu-dark">
+              <a href="#" class="nav-item px-2 nav-link px-xl-4">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="main-container">
+    <div class="layout">
+      <div class="layout__main">
+        <div class="bg-dark col-12">
+          <div class="container bg-dark">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb m-0 align-items-center">
+                <li class="breadcrumb-item"><a href="#">
+                  <img class="img-fluid" width="30px" src="../home.png" alt="">
+                </a>
+                </li>
+                <li class="breadcrumb-item"><a href="#">Previous page</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Current page</li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+        <div class="pb-5">
+          <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                      aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                      aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                      aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item  active">
+                <div class="carousel-item__wrapper d-block d-sm-flex">
+                  <div class="carousel__info text-align-right bg-dark color-light p-5 col-12 col-sm-6">
+                    <h1 class="carousel__title">Carousel title</h1>
+                    <p class="carousel__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus
+                      animi beatae commodi corporis facilis fugiat illo laboriosam nemo numquam odio perferendis placeat
+                      porro quae quas, rerum tenetur vero voluptate, voluptatibus.</p>
+                    <a href="#" class="btn btn-secondary m-0 px-5 carousel__link">Watch!</a>
+                  </div>
+                  <img src="https://picsum.photos/600/400" class="d-block col-12 col-sm-6 img-fluid" alt="...">
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="carousel-item__wrapper d-block d-sm-flex">
+                  <div class="carousel__info text-align-right bg-dark color-light p-5 col-12 col-sm-6">
+                    <h2 class="carousel__title">Carousel title</h2>
+                    <p class="carousel__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus
+                      animi beatae commodi corporis facilis fugiat illo laboriosam nemo numquam odio perferendis placeat
+                      porro quae quas, rerum tenetur vero voluptate, voluptatibus.</p>
+                    <a href="#" class="btn btn-secondary m-0 px-5 carousel__link">Watch!</a>
+                  </div>
+                  <img src="https://picsum.photos/600/400" class="d-block col-12 col-sm-6 img-fluid" alt="...">
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="carousel-item__wrapper d-block d-sm-flex">
+                  <div class="carousel__info text-align-right bg-dark color-light p-5 col-12 col-sm-6">
+                    <h1 class="carousel__title">Carousel title</h1>
+                    <p class="carousel__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus
+                      animi beatae commodi corporis facilis fugiat illo laboriosam nemo numquam odio perferendis placeat
+                      porro quae quas, rerum tenetur vero voluptate, voluptatibus.</p>
+                    <a href="#" class="btn btn-secondary m-0 px-5 carousel__link">Watch!</a>
+                  </div>
+                  <img src="https://picsum.photos/id/237/600/400" class="d-block col-12 col-sm-6 imf-fluid" alt="...">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container py-5 first">
+          <h2 class="text-align-center">Some cards</h2>
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+            <div class="col">
+              <div class="card h-100 first__card">
+                <img class="img-fluid card-img-top first__card-img" src="https://picsum.photos/300/200" alt="...">
+                <div class="card-body d-flex flex-column first__card-body">
+                  <h5 class="card-title first__card-title">Card title</h5>
+                  <p class="card-text first__card-description">This is a longer card with supporting text below as a
+                    natural lead-in to additional content. This content is a little bit longer.</p>
+                  <a href="#" class="link-secondary mt-auto stretched-link first__card-link">Watch more!</a>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 first__card">
+                <img class="img-fluid card-img-top first__card-img" src="https://picsum.photos/300/200" alt="...">
+                <div class="card-body d-flex flex-column first__card-body">
+                  <h5 class="card-title first__card-title">Card title</h5>
+                  <p class="card-text first__card-description">This is a longer card with supporting text below as a
+                    natural lead-in to additional content. This content is a little bit longer.</p>
+                  <a href="#" class="link-secondary mt-auto stretched-link first__card-link">Watch more!</a>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 first__card">
+                <img class="img-fluid card-img-top first__card-img" src="https://picsum.photos/300/200" alt="...">
+                <div class="card-body d-flex flex-column first__card-body">
+                  <h5 class="card-title first__card-title">Card title</h5>
+                  <p class="card-text first__card-description">This is a longer card with supporting text below as a
+                    natural lead-in to additional content.</p>
+                  <a href="#" class="link-secondary mt-auto stretched-link first__card-link">Watch more!</a>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 first__card">
+                <img class="img-fluid card-img-top first__card-img" src="https://picsum.photos/300/200" alt="...">
+                <div class="card-body d-flex flex-column first__card-body">
+                  <h5 class="card-title first__card-title">Card title</h5>
+                  <p class="card-text first__card-description">This is a longer card with supporting text below as a
+                    natural lead-in to additional content. This content is a little bit longer.</p>
+                  <a href="#" class="link-secondary mt-auto stretched-link first__card-link">Watch more!</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container py-5 second">
+          <h2 class="text-align-center second__title">More cards</h2>
+          <div class="row row-cols-1 row-cols-lg-2 row-cols-lg-2 g-4">
+            <div class="col-lg-6">
+              <a href="#" class="card bg-dark text-white second__card">
+                <img class="img-fluid card-img opacity-25 second__card-img" src="https://picsum.photos/300/200"
+                     alt="...">
+                <div
+                  class="card-img-overlay d-flex flex-column justify-content-end fs-4 link-light d-flex flex-column second__card-body">
+                  <img class="card-img-top w-25 d-none d-xl-block second__card-preview"
+                       src="https://picsum.photos/100/100" alt="">
+                  <h5 class="card-title mt-4 fs-2 second__card-title">Card title</h5>
+                  <p class="card-text fs-5 second__card-description">This is a wider card with supporting text below as
+                    a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text fs-5 mt-auto fs-6 second__card-date">Last updated 3 mins ago</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-6">
+              <a href="#" class="card bg-dark text-white second__card">
+                <img class="img-fluid card-img opacity-25 second__card-img" src="https://picsum.photos/300/200"
+                     alt="...">
+                <div
+                  class="card-img-overlay d-flex flex-column justify-content-end fs-4 link-light d-flex flex-column second__card-body">
+                  <img class="card-img-top w-25 d-none d-xl-block second__card-preview"
+                       src="https://picsum.photos/100/100" alt="">
+                  <h5 class="card-title mt-4 fs-2 second__card-title">Card title</h5>
+                  <p class="card-text fs-5 second__card-description">This is a wider card with supporting text below as
+                    a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text mt-auto fs-6 second__card-date">Last updated 3 mins ago</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 my-5 w-100 m-0 third bg-dark">
+          <div class="container">
+            <div class="card border-0 third__card">
+              <div class="row g-0 bg-dark justify-content-between d-flex">
+                <div class="col-md-8 bg-dark text-secondary">
+                  <div class="card-body py-5 px-0 third__card-body">
+                    <h5 class="card-title third__card-title">Card title</h5>
+                    <p class="card-text third__card-description">This is a wider card with supporting text below as a
+                      natural lead-in to additional content. This content is a little bit longer.</p>
+                    <a href="#" class="badge bg-dark px-0 link-light third__card-link">More information!</a>
+                  </div>
+                </div>
+                <div class="col-md-4 py-5 px-0 d-flex justify-content-end">
+                  <img src="https://picsum.photos/400/300" class="img-fluid rounded-start third__card-img" alt="...">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container py-5 text-center my-3 slider">
+          <h2 class="text-align-center slider__title">Products you might like</h2>
+          <div class="row mx-auto my-auto justify-content-center">
+            <div id="recipeCarousel" class="carousel slide p-0" data-bs-ride="carousel">
+              <div class="carousel-inner multiple-carousel-inner" role="listbox">
+                <div class="carousel-item multiple-carousel-item active slider__item">
+                  <div class="col-md-3">
+                    <div class="card slider__card">
+                      <div class="card-img slider__card-img">
+                        <div class="overlay w-100 opacity-25 bg-black position-absolute h-100"></div>
+                        <img src="https://picsum.photos/500/400" class="img-fluid">
+                      </div>
+                      <a href="#"
+                         class="card-img-overlay d-flex flex-column justify-content-end fs-4 link-light slider__card-title">Product
+                        1</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item multiple-carousel-item slider__item">
+                  <div class="col-md-3">
+                    <div class="card slider__card">
+                      <div class="card-img slider__card-img">
+                        <div class="overlay w-100 opacity-25 bg-black position-absolute h-100"></div>
+                        <img src="https://picsum.photos/500/400" class="img-fluid">
+                      </div>
+                      <a href="#"
+                         class="card-img-overlay d-flex flex-column justify-content-end fs-4 link-light slider__card-title">Product
+                        2</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item multiple-carousel-item slider__item">
+                  <div class="col-md-3">
+                    <div class="card slider__card">
+                      <div class="card-img slider__card-img">
+                        <div class="overlay w-100 opacity-25 bg-black position-absolute h-100"></div>
+                        <img src="https://picsum.photos/500/400" class="img-fluid">
+                      </div>
+                      <a href="#"
+                         class="card-img-overlay d-flex flex-column justify-content-end fs-4 link-light slider__card-title">Product
+                        3</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item multiple-carousel-item slider__item">
+                  <div class="col-md-3">
+                    <div class="card slider__card">
+                      <div class="card-img slider__card-img">
+                        <div class="overlay w-100 opacity-25 bg-black position-absolute h-100"></div>
+                        <img src="https://picsum.photos/500/400" class="img-fluid">
+                      </div>
+                      <a href="#"
+                         class="card-img-overlay d-flex flex-column justify-content-end fs-4 link-light slider__card-title">Product
+                        4</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item multiple-carousel-item slider__item">
+                  <div class="col-md-3">
+                    <div class="card slider__card">
+                      <div class="card-img slider__card-img">
+                        <div class="overlay w-100 opacity-25 bg-black position-absolute h-100"></div>
+                        <img src="https://picsum.photos/500/400" class="img-fluid">
+                      </div>
+                      <a href="#"
+                         class="card-img-overlay d-flex flex-column justify-content-end fs-4 link-light slider__card-title">Product
+                        5</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item multiple-carousel-item slider__item">
+                  <div class="col-md-3">
+                    <div class="card slider__card">
+                      <div class="card-img slider__card-img">
+                        <div class="overlay w-100 opacity-25 bg-black position-absolute h-100"></div>
+                        <img src="https://picsum.photos/500/400" class="img-fluid">
+                      </div>
+                      <a href="#"
+                         class="card-img-overlay d-flex flex-column justify-content-end fs-4 link-light slider__card-title">Product
+                        6</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button"
+                 data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              </a>
+              <a class="carousel-control-next bg-transparent w-aut" href="#recipeCarousel" role="button"
+                 data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="container py-5 products">
+          <h2 class="text-align-center">Products</h2>
+          <div class="row justify-content-end sort">
+            <div class="col-12 col-md-6 d-flex align-items-center mb-3 mb-lg-0">
+              <label class="col-3" for="name-select">Sort by name:</label>
+              <div class="sort__name">
+                <form class="sort__name-form form" id="name-select">
+                  <select class="sort__name-select">
+                    <option selected>Default</option>
+                    <option>from A to Z</option>
+                    <option>from Z to A</option>
+                  </select>
+                </form>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 d-flex align-items-center">
+              <label class="col-3" for="price-select">Sort by name:</label>
+              <div class="sort__price">
+                <form class="sort__price-form form" id="price-select">
+                  <select class="sort__price-select">
+                    <option selected>Default</option>
+                    <option>from A to Z</option>
+                    <option>from Z to A</option>
+                  </select>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 py-5">
+            <div class="col">
+              <div class="card h-100 product__card">
+                <img class="img-fluid card-img-top product__card-img" src="https://picsum.photos/300/200" alt="...">
+                <div class="card-body d-flex flex-column product__card-body">
+                  <h5 class="card-title product__card-title">Card title</h5>
+                  <p class="card-text product__card-description">This is a longer card with supporting text below as a
+                    natural lead-in to additional content. This content is a little bit longer.</p>
+                  <a href="#" class="link-secondary mt-auto stretched-link product__card-link">Watch more!</a>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 product__card">
+                <img class="img-fluid card-img-top product__card-img" src="https://picsum.photos/300/200" alt="...">
+                <div class="card-body d-flex flex-column product__card-body">
+                  <h5 class="card-title product__card-title">Card title</h5>
+                  <p class="card-text product__card-description">This is a longer card with supporting text below as a
+                    natural lead-in to additional content. This content is a little bit longer.</p>
+                  <a href="#" class="link-secondary mt-auto stretched-link product__card-link">Watch more!</a>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 product__card">
+                <img class="img-fluid card-img-top product__card-img" src="https://picsum.photos/300/200" alt="...">
+                <div class="card-body d-flex flex-column product__card-body">
+                  <h5 class="card-title product__card-title">Card title</h5>
+                  <p class="card-text product__card-description">This is a longer card with supporting text below as a
+                    natural lead-in to additional content.</p>
+                  <a href="#" class="link-secondary mt-auto stretched-link product__card-link">Watch more!</a>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 product__card">
+                <img class="img-fluid card-img-top product__card-img" src="https://picsum.photos/300/200" alt="...">
+                <div class="card-body d-flex flex-column product__card-body">
+                  <h5 class="card-title product__card-title">Card title</h5>
+                  <p class="card-text product__card-description">This is a longer card with supporting text below as a
+                    natural lead-in to additional content. This content is a little bit longer.</p>
+                  <a href="#" class="link-secondary mt-auto stretched-link product__card-link">Watch more!</a>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 product__card">
+                <img class="img-fluid card-img-top product__card-img" src="https://picsum.photos/300/200" alt="...">
+                <div class="card-body d-flex flex-column product__card-body">
+                  <h5 class="card-title product__card-title">Card title</h5>
+                  <p class="card-text product__card-description">This is a longer card with supporting text below as a
+                    natural lead-in to additional content. This content is a little bit longer.</p>
+                  <a href="#" class="link-secondary mt-auto stretched-link product__card-link">Watch more!</a>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 product__card">
+                <img class="img-fluid card-img-top product__card-img" src="https://picsum.photos/300/200" alt="...">
+                <div class="card-body d-flex flex-column product__card-body">
+                  <h5 class="card-title product__card-title">Card title</h5>
+                  <p class="card-text product__card-description">This is a longer card with supporting text below as a
+                    natural lead-in to additional content. This content is a little bit longer.</p>
+                  <a href="#" class="link-secondary mt-auto stretched-link product__card-link">Watch more!</a>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 product__card">
+                <img class="img-fluid card-img-top product__card-img" src="https://picsum.photos/300/200" alt="...">
+                <div class="card-body d-flex flex-column product__card-body">
+                  <h5 class="card-title product__card-title">Card title</h5>
+                  <p class="card-text product__card-description">This is a longer card with supporting text below as a
+                    natural lead-in to additional content.</p>
+                  <a href="#" class="link-secondary mt-auto stretched-link product__card-link">Watch more!</a>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 product__card">
+                <img class="img-fluid card-img-top product__card-img" src="https://picsum.photos/300/200" alt="...">
+                <div class="card-body d-flex flex-column product__card-body">
+                  <h5 class="card-title product__card-title">Card title</h5>
+                  <p class="card-text product__card-description">This is a longer card with supporting text below as a
+                    natural lead-in to additional content. This content is a little bit longer.</p>
+                  <a href="#" class="link-secondary mt-auto stretched-link product__card-link">Watch more!</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="mt-auto footer-dark text-light bg-secondary footer">
+    <div class="container">
+      <div class="footer--menu d-flex flex-column flex-sm-row">
+        <ul class="nav navbar-nav flex-column col-sm-4">
+          <li class="nav-item">
+            <a href="#" class="nav-link">Products</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">All Products</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Favorites</a>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav flex-column col-sm-4">
+          <li class="nav-item">
+            <a href="#" class="nav-link">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">About Company</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Rules</a>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav flex-column col-sm-4">
+          <li class="nav-item">
+            <a href="#" class="nav-link">Contacts</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Useful Links</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Location</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Terms</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Support</a>
+          </li>
+        </ul>
+      </div>
+      <div
+        class="footer__bottom d-flex flex-column-reverse flex-md-row mt-5 border-top justify-content-between align-items-md-center py-3">
+        <div class="footer__copy col-5 col-md-3">© Bootcamp 2022</div>
+        <div class="col-12 col-md-9 d-flex align-items-center justify-content-md-end mb-3 mb-md-0">
+          <div class="navbar-brand d-flex align-items-center col-md-5">
+            <a href="/" class="site-logo d-block">
+              <img src="../logo.svg" alt="">
+            </a>
+            <div>
+              <a href="/" class="site-title">Bootcamp</a>
+            </div>
+          </div>
+          <a href="#" class="col-2"><img class="img-fluid w-100" src="../i20-logo.png" alt=""></a>
+          <a href="#" class="col-1 mx-3"><img class="img-fluid w-100" src="../drupaljedi-logo.png" alt=""></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+</body>
+</html>

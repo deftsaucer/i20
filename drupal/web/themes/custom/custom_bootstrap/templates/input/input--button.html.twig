@@ -1,0 +1,50 @@
+{% extends "input.html.twig" %}
+{#
+/**
+ * @file
+ * Theme suggestion for "button" input form element.
+ *
+ * Available variables:
+ * - attributes: A list of HTML attributes for the input element.
+ * - children: Optional additional rendered elements.
+ * - icon: An icon.
+ * - icon_only: Flag to display only the icon and not the label.
+ * - icon_position: Where an icon should be displayed.
+ * - label: button label.
+ * - prefix: Markup to display before the input element.
+ * - suffix: Markup to display after the input element.
+ * - type: The type of input.
+ *
+ * @ingroup templates
+ *
+ * @see \Drupal\bootstrap\Plugin\Preprocess\InputButton
+ * @see \Drupal\bootstrap\Plugin\Preprocess\Input
+ * @see template_preprocess_input()
+ */
+#}
+  {% block input %}{% apply spaceless %}
+    {%
+      set classes = [
+      'btn',
+      type == 'submit' ? 'js-form-submit',
+      icon and icon_position and not icon_only ? 'icon-' ~ icon_position,
+    ]
+    %}
+    {% if icon and icon_only %}
+      <button class="btn position-absolute" style="right: 0" {{ attributes.addClass(classes, 'icon-only') }}>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+             viewBox="0 0 16 16">
+          <path
+            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+        </svg>
+      </button>
+    {% else %}
+      {% if icon_position == 'after' %}
+        <button{{ attributes.addClass(classes) }}>{{ label }}{{ icon }}</button>{{ children }}
+      {% else %}
+        <button{{ attributes.addClass(classes) }}>{{ icon }}{{ label }}</button>{{ children }}
+      {% endif %}
+    {% endif %}
+    {{ children }}
+  {% endapply %}{% endblock %}
+
